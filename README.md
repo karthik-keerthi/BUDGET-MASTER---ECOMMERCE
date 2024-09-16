@@ -1,5 +1,5 @@
 # 🎯 AI-Driven Media Investment Plan Across Channels for E-commerce
-## 🚀 BUDGET MASTER APPLICATION
+## 🚀 BUDGET MASTER APPLICATION - https://www.popai.pro/share.html?shareKey=51436dd50214b0bb877c20f5b09c519a025e6cd19e568d00fda8ce24ce954155&utm_source=presentationsharepage
 
 ### Overview
 This project focuses on **optimizing a analysis and marketing budget** across various paid media channels using AI, machine learning, and **RAG-powered LLM chatbot**. The chatbot interacts with users, answering queries about customer journeys, ad performance, and budget reallocation. It employs **LangChain** and **Chainlit** for enhanced document retrieval and language generation.
