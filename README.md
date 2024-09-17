@@ -4,90 +4,146 @@
 ### Overview
 This project focuses on **optimizing a analysis and marketing budget** across various paid media channels using AI, machine learning, and **RAG-powered LLM chatbot**. The chatbot interacts with users, answering queries about customer journeys, ad performance, and budget reallocation. It employs **LangChain** and **Chainlit** for enhanced document retrieval and language generation.
 
-### Features
-- **🔍 Analyze Customer Journey Data**: Review customer interactions across different marketing channels.
-- **💡 Machine Learning Insights**: Utilize AI models to detect trends and optimize channel performance.
-- **💬 RAG LLM Chatbot**: A conversational assistant that retrieves relevant data from documents and provides AI-generated answers.
-- **📊 Budget Reallocation**: Smartly reallocate marketing budget based on performance forecasts.
 
-### RAG LLM Chatbot Integration 🤖💬
-The application features a **Retrieval-Augmented Generation (RAG) LLM chatbot**, which combines language models and document retrieval for enhanced answers. Here’s how it works:
+## ✨ Features
 
-1. **Document Search with LangChain**: The chatbot uses LangChain to retrieve relevant excerpts from documents.
-2. **AzureChatOpenAI Integration**: The chatbot generates contextual, AI-driven answers using the GPT-35-turbo model.
-3. **Chainlit Framework**: Provides real-time, interactive chatbot functionality in the user interface.
-
-### How It Works ⚙️
-1. **Data Retrieval**: The chatbot uses **LangChain** to fetch the most relevant document excerpts in response to user queries.
-2. **LLM Response**: **AzureChatOpenAI** generates responses by combining the retrieved data and AI language models.
-3. **User Interaction**: Through **Chainlit**, the chatbot interacts in real-time, providing valuable insights on customer journey data, ad spend, and budget decisions.
-
-### Tools & Libraries 🛠️
-- **AzureChatOpenAI**: GPT-35-turbo model used for generating AI-driven responses.
-- **SessionsPythonREPLTool**: Executes Python code and supports machine learning analysis and visualization.
-- **Vector Store Retriever**: Retrieves customer journey data from documents to aid analysis.
-- **LangChain**: Retrieves relevant data chunks from documents to support RAG-based responses.
-- **Chainlit**: Enables real-time interaction with users through an intuitive chatbot interface.
-
-### Installation & Setup 🛠️
-
-1. **Clone the Repository**:
-    ```bash
-    git clone https://github.com/your-repo/budget-master-application.git
-    ```
-
-2. **Install Dependencies**:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3. **Set Environment Variables**:
-    Set up your `.env` file to include necessary keys for Azure, LangChain, and vector store.
-    ```
-    AZURE_OPENAI_ENDPOINT=your_endpoint
-    OPENAI_API_KEY=your_openai_key
-    POOL_MANAGEMENT_ENDPOINT=your_pool_management_endpoint
-    PDF_DIR=your_pdf_directory
-    ```
-
-4. **Run the Application**:
-    Execute the application, which will launch the RAG-powered chatbot and allow users to query documents and optimize media investments.
-    ```bash
-    python app.py
-    ```
-
-### RAG LLM Chatbot in Action 💬✨
-The chatbot can answer queries like:
-- **“What channels are driving the most conversions?”**
-- **“How should I reallocate my $200,000 budget for optimal conversions?”**
-- **“Show me the customer journey data for Facebook Ads.”**
-
-With the RAG approach, the chatbot retrieves relevant document sections, then the LLM generates detailed, insightful responses.
-
-### Example Workflow 📈
-1. **User Interaction**: A user asks the chatbot about ad performance or budget allocation.
-2. **Document Retrieval**: LangChain retrieves the most relevant sections from the document store.
-3. **Response Generation**: AzureChatOpenAI generates a response by combining retrieved data with its LLM capabilities.
-4. **Insights Delivered**: The chatbot returns a concise, data-driven recommendation for improving the media plan.
-
-### Usage 📊
-
-- **Upload Data**: Upload PDF files containing customer journey or ad spend data to the system.
-- **Ask Questions**: Use the RAG-powered chatbot to interact with the application and query data.
-- **Analyze and Visualize**: Run Python code to process data, generate insights, and visualize trends.
-- **Optimize Budget**: Based on AI-driven insights, reallocate your marketing budget to maximize conversions.
-
-### Media Investment Plan 📑
-At the end of the analysis, you will receive:
-- A detailed media investment plan with optimized budget allocations.
-- Predictions for conversion rates for each paid channel over the next 30 days.
-
-### Contributions 🤝
-Feel free to fork the project and create pull requests for any enhancements or bug fixes! Together, we can make marketing smarter with AI. 💼🤖
-
-### License 📜
-This project is licensed under the MIT License.
+- AI-Powered Media Optimization: Allocate and optimize marketing budgets across paid media channels using an AI-driven model.
+- Data Upload & Analysis: Users can upload customer journey data, ad spend data in CSV or other formats, and receive detailed analysis and insights.
+- RAG-Powered Chatbot: The chatbot interacts with users, answering queries about ad performance, customer journey insights, and budget recommendations.
+- Python & Azure-Powered: Built using Python, LangChain, Azure, and other modern tools for seamless AI operations.
+- Customizable Welcome Screen: Modify the Chainlit-powered welcome screen or remove it as needed.
 
 ---
 
-Start optimizing your marketing budget today with the **BUDGET MASTER APPLICATION**! 🎉
+## 📂 Project Structure
+
+- `.dockerignore`: Specifies which files to ignore during Docker builds.
+- `.gitignore`: Lists files and directories that Git should ignore.
+- `Dockerfile`: Defines the Docker image build process using Python 3.12 and Poetry.
+- `LICENSE`: MIT License, ensuring the project is free and open for any use.
+- `chainlit.md`: Contains the welcome message for users interacting with the Chainlit-based chatbot.
+- `chat_app.py`: The main application that runs the chatbot, integrating LangChain, Azure, and custom tools for document search and Python execution.
+- `common.py`: Manages Azure's vector store and search index with embeddings to enhance search functionality.
+- `entrypoint.sh`: A shell script to start the chatbot or indexer job based on the argument provided.
+- `indexer_job.py`: Handles document loading and indexing of user-uploaded files (e.g., PDFs) into the vector store.
+- `poetry.lock`: Ensures dependency version consistency.
+- `prompt.py`: The prompt template guiding the chatbot's logic for budget optimization.
+- `pyproject.toml`: Project configuration and dependency management via Poetry.
+
+---
+
+## 🛠️ Installation and Setup
+
+1. Clone the Repository
+
+    ```bash
+    git clone https://github.com/your-username/budget-master.git
+    cd budget-master
+    ```
+
+2. Install Dependencies with Poetry
+
+    Make sure you have [Poetry](https://python-poetry.org/) installed.
+
+    ```bash
+    poetry install
+    ```
+
+3. Set up Environment Variables
+
+    Create a `.env` file in the root directory with your Azure and OpenAI credentials:
+
+    ```bash
+    AZURE_OPENAI_ENDPOINT="your-azure-openai-endpoint"
+    AZURE_SEARCH_ENDPOINT="your-azure-search-endpoint"
+    POOL_MANAGEMENT_ENDPOINT="your-pool-management-endpoint"
+    ```
+
+4. Run the Application
+
+    Use the provided `entrypoint.sh` to run the chatbot or indexer job:
+
+    ```bash
+    ./entrypoint.sh chat_app
+    ```
+
+    Or run the indexer:
+
+    ```bash
+    ./entrypoint.sh indexer_job
+    ```
+
+---
+
+## 🧠 How It Works
+
+- Step 1: The user uploads their data (e.g., CSV files) to the application.
+- Step 2: The application processes and indexes the data using Azure Search and LangChain embeddings.
+- Step 3: The chatbot interacts with the user, answering questions about customer journeys, ad performance, and providing optimized budget plans.
+- Step 4: The AI model uses machine learning techniques to suggest optimal media budgets across various channels based on the uploaded data.
+
+---
+
+## 🔧 Key Technologies
+
+- Python 3.12: Core programming language for AI and data processing.
+- LangChain: Used for creating the RAG (Retrieval-Augmented Generation) chatbot.
+- Azure Search: For storing and retrieving document vectors for fast and efficient search.
+- Chainlit: Powers the chatbot interface and user interactions.
+- Poetry: Dependency and project management.
+
+---
+
+## 🧪 Example Use Case
+
+Here’s a brief example of how the chatbot works:
+
+1. Upload Data: Users upload their CSV or PDF data containing customer journey and ad spend information.
+2. Ask Questions: The user asks the chatbot: "Which channel is driving the most conversions?"
+3. Receive AI-Powered Insights: The chatbot analyzes the data and responds with insights such as: "Based on the data, paid search ads have the highest conversion rates for the allocated budget."
+4. Budget Reallocation: The chatbot suggests reallocating budget to optimize conversions: "It is recommended to allocate 20% more budget to paid search ads to increase conversions by 15%."
+
+---
+
+## 📊 Media Investment Strategy
+
+The AI analyzes and reassigns the budget based on customer journey and ad spend data:
+
+- Data-Driven Budget Allocation: Based on uploaded data, the AI suggests how to reallocate a $200,000 total budget across various channels like:
+  - 📈 Paid Search
+  - 📱 Social Media
+  - 🛍️ Display Ads
+  - 📰 Native Ads
+
+- Advanced Machine Learning: The model predicts the potential conversion uplift by reallocating the budget.
+- Visualization: Results can be plotted using `pandas`, `plotly`, or `matplotlib`.
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions from the community! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch with a descriptive name (e.g., `feature-new-analysis-tool`).
+3. Make your changes and commit them.
+4. Open a pull request, and describe the changes in detail.
+
+---
+
+## 🛡️ License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.
+
+---
+
+## 👥 Community and Support
+
+For any questions or support, feel free to reach out:
+
+- Join the discussion on our [Discord Community](https://discord.gg/k73SQ3FyUh) 💬
+- Check out the full [Chainlit Documentation](https://docs.chainlit.io) 📚
+
+---
+
+Thank you for using BUDGET MASTER APPLICATION! We can’t wait to see how you optimize your ad spending and boost your conversions with AI! 🚀💰
